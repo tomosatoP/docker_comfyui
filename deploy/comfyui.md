@@ -1,4 +1,4 @@
-# docker コンテナとして ComfyUI をデプロイ
+# docker コンテナとして ComfyUI をデプロイ `編集中`
 docker コンテナとして `ComfyUI` をデプロイする。
 - username: comfyui
 - hostname: host
