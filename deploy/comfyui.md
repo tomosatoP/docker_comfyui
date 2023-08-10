@@ -8,7 +8,7 @@ docker コンテナとして `ComfyUI` をデプロイする。
 ## ComfyUI をデプロイ
 ダウンロード
 ~~~sh
-comfyui@host:~ $ git clone --depth 1 https://github.com/tomosatoP/docker_comfyui.git
+comfyui@host:~ $ git clone --recursive https://github.com/tomosatoP/docker_comfyui.git
 comfyui@host:~/docker_comfyui $ git submodule update
 comfyui@host:~/docker_comfyui $ bash script/download_models.sh
 comfyui@host:~/docker_comfyui $ ln -s script/launch_comfyui.sh ~/launch_comfyui.sh
