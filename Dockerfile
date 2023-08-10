@@ -10,7 +10,7 @@ RUN apt update -yq && \
     apt-utils git && \
     rm -rf /var/lib/apt/lists/*
 
-# Python packeges for ComfyUI
+# Python packages for ComfyUI
 WORKDIR /ComfyUI
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir --upgrade psutil && \
