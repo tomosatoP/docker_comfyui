@@ -43,15 +43,15 @@ comfyui@host:~/docker_comfyui $ sudo docker compose up --build -d
 ローカルリポジトリに add する。
 ~~~sh
 # initialize
-comfyui@host:~ $ git config username <unsername>
-comfyui@host:~ $ git config usermailen <mailadress>
+comfyui@host:~ $ git config --global user.name <unsername>
+comfyui@host:~ $ git config --global user.email <useremailaddress>
 comfyui@host:~/docker_comfyui $ git init
 
 # ssh の場合: sshkey が必要
-comfyui@host:~/docker_comfyui $ git remote add origin git@github.com:tomosatoP/docker_comfyui.git
+comfyui@host:~/docker_comfyui $ git remote add origin git@github.com:<username>/<repositryname>.git
 
 # https の場合: 個人用アクセストークンが必要
-comfyui@host:~/docker_comfyui $ git remote add origin https://github.com/tomosatoP/docker_comfyui.git
+comfyui@host:~/docker_comfyui $ git remote add origin https://github.com/<username>/<repositryname>.git
 
 comfyui@host:~/docker_comfyui $ git pull origin main
 comfyui@host:~/docker_comfyui $ git remote -v
