@@ -9,24 +9,6 @@ services:
       - '8188:8188'
     volumes:
       - ./comfyui:/ComfyUI
-      #- ./comfyui/custom_nodes:/ComfyUI/custom_nodes
-      #- ./comfyui/input:/ComfyUI/input
-      #- ./comfyui/output:/ComfyUI/output
-      #- ./comfyui/models/checkpoints:/ComfyUI/models/checkpoints
-      #- ./comfyui/models/clip:/ComfyUI/models/clip
-      #- ./comfyui/models/clip_vision:/ComfyUI/models/clip_vision
-      #- ./comfyui/models/configs:/ComfyUI/models/configs
-      #- ./comfyui/models/controlnet:/ComfyUI/models/controlnet
-      #- ./comfyui/models/diffusers:/ComfyUI/models/diffusers
-      #- ./comfyui/models/embeddings:/ComfyUI/models/embeddings
-      #- ./comfyui/models/gligen:/ComfyUI/models/gligen
-      #- ./comfyui/models/hypernetworks:/ComfyUI/models/hypernetworks
-      #- ./comfyui/models/loras:/ComfyUI/models/loras
-      #- ./comfyui/models/style_models:/ComfyUI/models/style_models
-      #- ./comfyui/models/unet:/ComfyUI/models/unet
-      #- ./comfyui/models/upscale_models:/ComfyUI/models/upscale_models
-      #- ./comfyui/models/vae:/ComfyUI/models/vae
-      #- ./comfyui/models/vae_approx:/ComfyUI/models/vae_approx
     logging:
       options:
         max-size: '200k'
