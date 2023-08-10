@@ -37,3 +37,34 @@ comfyui@host:~/docker_comfyui $ sudo docker compose up --build -d
 ---
 [READMEに戻る](../README.md)
 ---
+
+## サブモジュール 
+まず github にリモートリポジトリを作って、 README.md, LICENCE, .gitignore 等をおく。
+ローカルリポジトリに add する。
+~~~sh
+# initialize
+comfyui@host:~ $ git config username <unsername>
+comfyui@host:~ $ git config usermailen <mailadress>
+comfyui@host:~/docker_comfyui $ git init
+
+# ssh の場合: sshkey が必要
+comfyui@host:~/docker_comfyui $ git remote add origin git@github.com:tomosatoP/docker_comfyui.git
+
+# https の場合: 個人用アクセストークンが必要
+comfyui@host:~/docker_comfyui $ git remote add origin https://github.com/tomosatoP/docker_comfyui.git
+
+comfyui@host:~/docker_comfyui $ git pull origin main
+comfyui@host:~/docker_comfyui $ git remote -v
+comfyui@host:~/docker_comfyui $ git status
+~~~
+サブモジュールを追加する。
+~~~sh
+# add submodule
+comfyui@host:~/docker_comfyui $ git submodule add https://github.com/comfyanonymous/ComfyUI.git comfyui
+# pull all submodule
+comfyui@host:~/docker_comfyui $ git submodule update
+# commit
+comfyui@host:~/docker_comfyui $ git commit -m "update submodule"
+# push 
+comfyui@host:~/docker_comfyui $ git push origin main
+~~~
