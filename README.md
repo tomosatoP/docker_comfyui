@@ -29,6 +29,5 @@ Stable Diffusion (画像生成 AI) の WebUI である ComfyUI を Windows ア�
 ### 他の使い方
 この他の使い方は [ComfyUI Community Manual](https://blenderneko.github.io/ComfyUI-docs/) を参照。
 
-
-こんなことができる ComfyUI は素晴らしい。[comfyanonymous](https://github.com/comfyanonymous) さんに感謝を。
+ComfyUI は素晴らしい。[comfyanonymous](https://github.com/comfyanonymous) さんに感謝を。
 ---
