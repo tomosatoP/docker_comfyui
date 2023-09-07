@@ -9,6 +9,7 @@ services:
       - '8188:8188'
     volumes:
       - ./comfyui:/ComfyUI
+      - ./manager:/ComfyUI/custom_nodes/ComfyUI-Manager
     logging:
       options:
         max-size: '200k'
