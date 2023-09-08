@@ -1,11 +1,11 @@
-# docker コンテナとして ComfyUI をデプロイ
+# docker コンテナとして ComfyUI (with ComfyUI-Manager) をデプロイ
 docker コンテナとして `ComfyUI (with ComfyUI-Manager)` をデプロイする。
 - username: comfyui
 - hostname: host
 - distributionname: Ubuntu_WebSD
 > 前提: [Ubuntu_WebSD 上に CUDA 対応 docker の構築](docker_CUDA.md) が適用済み
 
-## ComfyUI with ComfyUI-Manager をデプロイ
+## ComfyUI (with ComfyUI-Manager) をデプロイ
 ダウンロード
 ~~~sh
 comfyui@host:~ $ git clone --recursive https://github.com/tomosatoP/docker_comfyui.git
