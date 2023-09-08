@@ -44,6 +44,7 @@ comfyui@host:~$ sudo nano /etc/wsl.conf
 + generateResolvConf = false
 ~~~
 ~~~sh
+# nameserver の IP アドレスを設定
 comfyui@host:~$ sudo nano /etc/resolv.conf
 ~~~
 ~~~diff
@@ -56,7 +57,7 @@ docker デーモンの開始
 ~~~sh
 comfyui@host:~$ systemctl --user daemon-reload
 comfyui@host:~$ systemctl --user enable docker
-comfyui@host:~$ systemctl --user start docker
+comfyui@host:~$ systemctl --user restart docker
 ~~~
 
 ### NVIDIA Container Toolkit をインストール
@@ -82,8 +83,8 @@ comfyui@host:~$ sudo nano /etc/nvidia-container-runtime/config.toml
 ~~~
 動作確認
 ~~~sh
-comfyui@host:~$ sudo docker run hello-world
-comfyui@host:~$ sudo docker run -it --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi
+comfyui@host:~$ docker run hello-world
+comfyui@host:~$ docker run -it --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi
 ~~~
 ---
 [READMEに戻る](../README.md)
