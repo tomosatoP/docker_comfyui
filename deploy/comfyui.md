@@ -1,5 +1,5 @@
-# docker コンテナとして ComfyUI をデプロイ `編集中`
-docker コンテナとして `ComfyUI` をデプロイする。
+# docker コンテナとして ComfyUI をデプロイ
+docker コンテナとして `ComfyUI (with ComfyUI-Manager)` をデプロイする。
 - username: comfyui
 - hostname: host
 - distributionname: Ubuntu_WebSD
@@ -15,7 +15,7 @@ comfyui@host:~/docker_comfyui $ ln -s script/launch_comfyui.sh ~/launch_comfyui.
 
 docker コンテナ作成と開始 (detach mode)
 ~~~sh
-comfyui@host:~/docker_comfyui $ sudo docker compose up --build -d
+comfyui@host:~/docker_comfyui $ docker compose up --build -d
 ~~~
 
 > `docker_comfyui/script_for_windows/comfyui.ps1` を適当なフォルダ (デスクトップとか) にコピー
@@ -27,11 +27,11 @@ comfyui@host:~/docker_comfyui $ sudo docker compose up --build -d
 > ComfyUI のアップデート間隔が短いので、定期的に更新するのがお勧め
 ~~~sh
 # 停止と削除
-comfyui@host:~/docker_comfyui $ sudo docker compose down --rmi all
-comfyui@host:~/docker_comfyui $ sudo docker system prune
+comfyui@host:~/docker_comfyui $ docker compose down --rmi all
+comfyui@host:~/docker_comfyui $ docker system prune
 # 作成と開始 (detach mode)
 comfyui@host:~/docker_comfyui $ git submodule update --remote --recursive
-comfyui@host:~/docker_comfyui $ sudo docker compose up --build -d
+comfyui@host:~/docker_comfyui $ docker compose up --build -d
 ~~~
 ---
 [READMEに戻る](../README.md)
