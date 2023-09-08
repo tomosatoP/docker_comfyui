@@ -1,5 +1,5 @@
 # ComfyUI を WSL-Ubuntu GUI で使う
-Stable Diffusion (画像生成 AI) の WebUI である ComfyUI を Windows アプリみたいに使えるようにする。
+Stable Diffusion (画像生成 AI) の WebUI である ComfyUI (with ComfyUI-Manager) を Windows アプリみたいに使えるようにする。
 
 ## 構成
 ### PC 環境
