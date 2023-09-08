@@ -1,5 +1,5 @@
-# Ubuntu_WebSD 上に CUDA 対応 docker の構築 
-`CUDA` 対応の `docker` 環境を構築する。
+# Ubuntu_WebSD 上に CUDA 対応 docker (rootless mode) の構築 
+`CUDA` 対応の `docker (rootless mode)` 環境を構築する。
 - username: comfyui
 - hostname: host
 - distributionname: Ubuntu_WebSD
@@ -14,17 +14,39 @@ comfyui@host:~$ nvidia-smi -L
 | GPU 0: NVIDIA GeForce RTX 3060 (UUID: 略)
 ~~~
 
-## CUDA 対応 docker の構築
+## CUDA 対応 docker (rootless mode) の構築
 https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/gpu-compute#setting-up-nvidia-cuda-with-docker
 
-### docker の手動インストールとサービス有効化
+### docker (rootless mode) の手動インストールとサービス有効化
+関連パッケージのインストール
 ~~~sh
-# docker 手動インストール
+comfyui@host:~$ sudo apt install uidmap
+~~~
+docker 手動インストール
+~~~sh
+# docker (root mode) 手動インストール
 comfyui@host:~$ curl https://get.docker.com | sh
+
+# 念の為、docker (root mode) を停止
+comfyui@host:~$ sudo systemctl disable --now docker.service docker.socket
+
+# docker (rootless mode) 手動インストール
+comfyui@host:~$ dockerd-rootless-setuptool.sh check
+comfyui@host:~$ dockerd-rootless-setuptool.sh install --skip-iptables
+~~~
+DNS 
+~~~sh
+comfyui@host:~$ sudo nano /etc/wsl.conf
+~~~
+~~~diff
++ [network]
++ generateResolvConf = false
+~~~
+~~~sh
 # docker デーモンの開始
-comfyui@host:~$ sudo systemctl daemon-reload
-comfyui@host:~$ sudo systemctl enable docker
-comfyui@host:~$ sudo systemctl start docker
+comfyui@host:~$ systemctl --user daemon-reload
+comfyui@host:~$ systemctl --user enable docker
+comfyui@host:~$ systemctl --user start docker
 ~~~
 
 ### NVIDIA Container Toolkit をインストール
