@@ -60,19 +60,28 @@ comfyui@host:~$ systemctl --user start docker
 ~~~
 
 ### NVIDIA Container Toolkit をインストール
+NVIDIA Container Toolkit リポジトリを設定
 ~~~sh
-# NVIDIA Container Toolkit リポジトリを設定
 comfyui@host:~$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 comfyui@host:~$ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-docker-keyring.gpg
 comfyui@host:~$ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-docker-keyring.gpg] https://#g' | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 ~~~
+NVIDIA ランタイム パッケージと依存関係をインストール
 ~~~sh
-# NVIDIA ランタイム パッケージと依存関係をインストール
 comfyui@host:~$ sudo apt update
 comfyui@host:~$ sudo apt install -y nvidia-docker2
 ~~~
+設定変更
 ~~~sh
-# 動作確認
+# 非cgroups ユーザーを許可 
+comfyui@host:~$ sudo nano /etc/nvidia-container-runtime/config.toml
+~~~
+~~~diff
+- #no-cgroups = false
++ no-cgroups = true
+~~~
+動作確認
+~~~sh
 comfyui@host:~$ sudo docker run hello-world
 comfyui@host:~$ sudo docker run -it --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi
 ~~~
