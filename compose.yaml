@@ -1,8 +1,8 @@
 services:
   comfyui:
     build:
-      context: ./comfyui
-      dockerfile: ../Dockerfile
+      context: .
+      dockerfile: Dockerfile
     container_name: docker-comfyui
     restart: always
     ports:
