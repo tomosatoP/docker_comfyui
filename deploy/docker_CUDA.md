@@ -36,6 +36,7 @@ comfyui@host:~$ dockerd-rootless-setuptool.sh install --skip-iptables
 ~~~
 DNS 設定
 ~~~sh
+# 起動時に /etc/resolv.conf を自動更新しないように変更
 comfyui@host:~$ sudo nano /etc/wsl.conf
 ~~~
 ~~~diff
@@ -50,6 +51,7 @@ comfyui@host:~$ sudo nano /etc/resolv.conf
 + nameserver 8.8.8.8
 ~~~
 > 再起動を推奨
+
 docker デーモンの開始
 ~~~sh
 comfyui@host:~$ systemctl --user daemon-reload
