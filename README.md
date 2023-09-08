@@ -12,9 +12,9 @@ Stable Diffusion (画像生成 AI) の WebUI である ComfyUI (with ComfyUI-Man
 
 ## インストールの手順
 1. [専用環境 Ubuntu_WebSD の構築](deploy/ubuntu_websd.md) - クリーンな wsl-ubuntu 環境の用意
-1. [Ubuntu_WebSD 上に CUDA 対応 docker の構築](deploy/docker_CUDA.md) - CUDA 対応の docker を導入
+1. [Ubuntu_WebSD 上に CUDA 対応 docker (rootless mode) の構築](deploy/docker_CUDA.md) - CUDA 対応の docker (rootless mode) を導入
 1. [ブラウザ (microsoft-edge) を導入](deploy/browser.md) - ComfyUI 用ブラウザの導入
-1. [docker コンテナとして ComfyUI をデプロイ](deploy/comfyui.md) - ComfyUI を `docker-comfyui` にデプロイ
+1. [docker コンテナとして ComfyUI (with ComfyUI-Manager) をデプロイ](deploy/comfyui.md) - ComfyUI (with ComfyUI-Manager) を `docker-comfyui` にデプロイ
 
 ## 使い方の簡単な説明
 
