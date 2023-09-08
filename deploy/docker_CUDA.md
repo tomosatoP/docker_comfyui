@@ -34,7 +34,7 @@ comfyui@host:~$ sudo systemctl disable --now docker.service docker.socket
 comfyui@host:~$ dockerd-rootless-setuptool.sh check
 comfyui@host:~$ dockerd-rootless-setuptool.sh install --skip-iptables
 ~~~
-DNS 
+DNS 設定
 ~~~sh
 comfyui@host:~$ sudo nano /etc/wsl.conf
 ~~~
@@ -43,7 +43,15 @@ comfyui@host:~$ sudo nano /etc/wsl.conf
 + generateResolvConf = false
 ~~~
 ~~~sh
-# docker デーモンの開始
+comfyui@host:~$ sudo nano /etc/resolv.conf
+~~~
+~~~diff
+- nameserver xxx.xxx.xxx.xxx
++ nameserver 8.8.8.8
+~~~
+> 再起動を推奨
+docker デーモンの開始
+~~~sh
 comfyui@host:~$ systemctl --user daemon-reload
 comfyui@host:~$ systemctl --user enable docker
 comfyui@host:~$ systemctl --user start docker
