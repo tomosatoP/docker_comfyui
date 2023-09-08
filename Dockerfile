@@ -10,11 +10,13 @@ RUN apt update -yq && \
     apt-utils git && \
     rm -rf /var/lib/apt/lists/*
 
-# Python packages for ComfyUI
+# Python packages for ComfyUI with ComfyUI-Manager
 WORKDIR /ComfyUI
-COPY requirements.txt requirements.txt
+COPY comfyui/requirements.txt requirements.txt
+COPY manager/requirements.txt manager_requirements.txt
 RUN pip install --no-cache-dir --upgrade psutil && \
     pip install --no-cache-dir --upgrade -r requirements.txt && \
+    pip install --no-cache-dir --upgrade -r manager_requirements.txt && \
     pip install --no-cache-dir --upgrade torch torchvision torchaudio
 
 # run
