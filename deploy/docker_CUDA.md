@@ -35,6 +35,7 @@ comfyui@host:~$ dockerd-rootless-setuptool.sh check
 comfyui@host:~$ dockerd-rootless-setuptool.sh install --skip-iptables
 ~~~
 > オプション `--skip-iptable` はいつまで必要なんだろうか？
+
 DNS 設定
 ~~~sh
 # 起動時に /etc/resolv.conf を自動更新しないように変更
