@@ -34,6 +34,7 @@ comfyui@host:~$ sudo systemctl disable --now docker.service docker.socket
 comfyui@host:~$ dockerd-rootless-setuptool.sh check
 comfyui@host:~$ dockerd-rootless-setuptool.sh install --skip-iptables
 ~~~
+> オプション `--skip-iptable` はいつまで必要なんだろうか？
 DNS 設定
 ~~~sh
 # 起動時に /etc/resolv.conf を自動更新しないように変更
@@ -51,7 +52,8 @@ comfyui@host:~$ sudo nano /etc/resolv.conf
 - nameserver xxx.xxx.xxx.xxx
 + nameserver 8.8.8.8
 ~~~
-> 再起動を推奨
+> 再起動を推奨<br>
+> 将来的には、`DNS設定` が不要になると良いなぁと
 
 docker デーモンの開始
 ~~~sh
