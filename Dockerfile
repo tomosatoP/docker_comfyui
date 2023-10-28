@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
 # system
-RUN apt-get update -yq && apt-get upgrade -yq &&\
+RUN apt-get update -yq && apt-get upgrade -yq && \
     DEBIAN_FRONTEND=noninteractive apt install -yq --no-install-recommends \
     apt-utils git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
